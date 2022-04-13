@@ -18,6 +18,7 @@ public class Arraylist_exercise {
 		System.out.println(8+"---->stop the operation");
 		while(true) {
 			Scanner scan=new Scanner(System.in);
+			System.out.println("enter the operation to be done=");
 			int operation=scan.nextInt();
 			if(operation==1) {
 				System.out.println("enter a element=");
@@ -35,7 +36,12 @@ public class Arraylist_exercise {
 			else if(operation==3) {
 				System.out.println("enter a index to remove");
 				int index=scan.nextInt();
-				color.remove(index);
+				if(index>=color.size())
+					System.out.println("give value less than total size of the list");
+				else {
+					color.remove(index);
+					System.out.println("value removed successfully");
+				}
 			}
 			else if(operation==4) {
 				color.clear();
